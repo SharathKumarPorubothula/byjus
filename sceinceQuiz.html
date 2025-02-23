@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz Game</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .quiz {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .options {
+            margin-left: 20px;
+            text-align: left;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Science Quiz Game</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>Q1: What is the chemical symbol for sodium?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> So</label>
+                <label><input type="radio" name="q1" value="b"> Na</label>
+                <label><input type="radio" name="q1" value="c"> S</label>
+                <label><input type="radio" name="q1" value="d"> Sn</label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>Q2: Which planet is known as the Red Planet?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Venus</label>
+                <label><input type="radio" name="q2" value="b"> Mars</label>
+                <label><input type="radio" name="q2" value="c"> Jupiter</label>
+                <label><input type="radio" name="q2" value="d"> Saturn</label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>Q3: What is the hardest natural substance on Earth?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Gold</label>
+                <label><input type="radio" name="q3" value="b"> Iron</label>
+                <label><input type="radio" name="q3" value="c"> Diamond</label>
+                <label><input type="radio" name="q3" value="d"> Quartz</label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>Q4: Which gas do humans breathe in for respiration?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Carbon dioxide</label>
+                <label><input type="radio" name="q4" value="b"> Nitrogen</label>
+                <label><input type="radio" name="q4" value="c"> Oxygen</label>
+                <label><input type="radio" name="q4" value="d"> Hydrogen</label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>Q5: Which part of the human body produces insulin?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Liver</label>
+                <label><input type="radio" name="q5" value="b"> Pancreas</label>
+                <label><input type="radio" name="q5" value="c"> Kidney</label>
+                <label><input type="radio" name="q5" value="d"> Stomach</label>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>Q6: What is the most abundant gas in Earth’s atmosphere?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Oxygen</label>
+                <label><input type="radio" name="q6" value="b"> Nitrogen</label>
+                <label><input type="radio" name="q6" value="c"> Carbon dioxide</label>
+                <label><input type="radio" name="q6" value="d"> Hydrogen</label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>Q7: Which organ pumps blood throughout the human body?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Lungs</label>
+                <label><input type="radio" name="q7" value="b"> Liver</label>
+                <label><input type="radio" name="q7" value="c"> Heart</label>
+                <label><input type="radio" name="q7" value="d"> Kidney</label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>Q8: Which scientist developed the theory of relativity?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Isaac Newton</label>
+                <label><input type="radio" name="q8" value="b"> Albert Einstein</label>
+                <label><input type="radio" name="q8" value="c"> Galileo Galilei</label>
+                <label><input type="radio" name="q8" value="d"> Nikola Tesla</label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>Q9: What is the boiling point of water in Fahrenheit?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> 200°F</label>
+                <label><input type="radio" name="q9" value="b"> 212°F</label>
+                <label><input type="radio" name="q9" value="c"> 220°F</label>
+                <label><input type="radio" name="q9" value="d"> 180°F</label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>Q10: Which vitamin is responsible for good vision?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Vitamin A</label>
+                <label><input type="radio" name="q10" value="b"> Vitamin C</label>
+                <label><input type="radio" name="q10" value="c"> Vitamin D</label>
+                <label><input type="radio" name="q10" value="d"> Vitamin K</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="btn" onclick="checkAnswers()">Submit</button>
+        <div class="result" id="quiz-result"></div>
+    </div>
+
+    <script>
+        // Correct answers for the quiz
+        const correctAnswers = {
+            q1: 'b', // Na
+            q2: 'b', // Mars
+            q3: 'c', // Diamond
+            q4: 'c', // Oxygen
+            q5: 'b', // Pancreas
+            q6: 'b', // Nitrogen
+            q7: 'c', // Heart
+            q8: 'b', // Albert Einstein
+            q9: 'b', // 212°F
+            q10: 'a' // Vitamin A
+        };
+
+        // Function to check answers
+        function checkAnswers() {
+            let score = 0;
+            const questions = Object.keys(correctAnswers);
+            questions.forEach((question) => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            });
+            const resultElement = document.getElementById('quiz-result');
+            resultElement.textContent = `You scored ${score} out of ${questions.length}!`;
+        }
+    </script>
+</body>
+</html>

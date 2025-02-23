@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Riddles Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .riddle {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .riddle h3 {
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+        .riddle p {
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            font-style: italic;
+            color: #ffcc00;
+        }
+
+        /* Skeleton Loading Effect */
+        .skeleton {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            animation: shimmer 1.5s infinite linear;
+        }
+
+        .skeleton-text {
+            height: 20px;
+            width: 80%;
+            margin: 10px auto;
+            border-radius: 4px;
+        }
+
+        .skeleton-button {
+            height: 40px;
+            width: 120px;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>The Riddles Challenge</h1>
+    <p>Solve these tricky riddles to test your logical thinking, problem-solving skills, and creativity!</p>
+
+    <!-- Skeleton Loading Placeholder -->
+    <div id="skeleton-loader">
+        <div class="riddle skeleton">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text"></div>
+            <div class="skeleton-button"></div>
+        </div>
+        <div class="riddle skeleton">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text"></div>
+            <div class="skeleton-button"></div>
+        </div>
+        <div class="riddle skeleton">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text"></div>
+            <div class="skeleton-button"></div>
+        </div>
+        <div class="riddle skeleton">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text"></div>
+            <div class="skeleton-button"></div>
+        </div>
+        <div class="riddle skeleton">
+            <div class="skeleton-text"></div>
+            <div class="skeleton-text"></div>
+            <div class="skeleton-button"></div>
+        </div>
+    </div>
+
+    <!-- Actual Riddles Content (Hidden Initially) -->
+    <div id="riddles-content" style="display: none;">
+        <!-- Riddle 1 -->
+        <div class="riddle">
+            <h3>Riddle 1</h3>
+            <p>I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?</p>
+            <button class="btn" onclick="showAnswer('answer1')">Show Answer</button>
+            <p id="answer1" class="answer">An echo.</p>
+        </div>
+
+        <!-- Riddle 2 -->
+        <div class="riddle">
+            <h3>Riddle 2</h3>
+            <p>I’m not alive, but I can grow. I don’t have lungs, but I need air. What am I?</p>
+            <button class="btn" onclick="showAnswer('answer2')">Show Answer</button>
+            <p id="answer2" class="answer">Fire.</p>
+        </div>
+
+        <!-- Riddle 3 -->
+        <div class="riddle">
+            <h3>Riddle 3</h3>
+            <p>The more you take, the more you leave behind. What am I?</p>
+            <button class="btn" onclick="showAnswer('answer3')">Show Answer</button>
+            <p id="answer3" class="answer">Footsteps.</p>
+        </div>
+
+        <!-- Riddle 4 -->
+        <div class="riddle">
+            <h3>Riddle 4</h3>
+            <p>What has keys but can’t open locks?</p>
+            <button class="btn" onclick="showAnswer('answer4')">Show Answer</button>
+            <p id="answer4" class="answer">A piano.</p>
+        </div>
+
+        <!-- Riddle 5 -->
+        <div class="riddle">
+            <h3>Riddle 5</h3>
+            <p>I’m tall when I’m young, and I’m short when I’m old. What am I?</p>
+            <button class="btn" onclick="showAnswer('answer5')">Show Answer</button>
+            <p id="answer5" class="answer">A candle.</p>
+        </div>
+    </div>
+
+    <script>
+        // Simulate a loading delay
+        setTimeout(() => {
+            // Hide the skeleton loader
+            document.getElementById('skeleton-loader').style.display = 'none';
+            // Show the actual riddles content
+            document.getElementById('riddles-content').style.display = 'block';
+        }, 2000); // 2 seconds delay
+
+        // JavaScript function to show the answer
+        function showAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            answer.style.display = "block";
+        }
+    </script>
+</body>
+</html>

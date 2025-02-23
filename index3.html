@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Test and Quiz Games</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section h2 {
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+        .quiz, .mock-test {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .quiz h3, .mock-test h3 {
+            margin-bottom: 10px;
+        }
+        .quiz p, .mock-test p {
+            margin-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+
+        /* Scrolling Preloader Animation */
+        @keyframes scrollLoad {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Mock Test and Quiz Games</h1>
+
+    <!-- English Section -->
+    <div class="section">
+        <h2>English</h2>
+        <div class="quiz">
+            <h3>Grammar Quiz</h3>
+            <p>Test your knowledge of English grammar with this interactive quiz.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/englishQuiz.html'">Start Quiz</button>
+        </div>
+        <div class="mock-test">
+            <h3>Mock Test: Reading Comprehension</h3>
+            <p>Practice your reading comprehension skills with this mock test.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/englishtest.html'">Start Test</button>
+        </div>
+    </div>
+
+    <!-- Science Section -->
+    <div class="section">
+        <h2>Science</h2>
+        <div class="quiz">
+            <h3>General Science Quiz</h3>
+            <p>Test your knowledge of general science topics.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/sceinceQuiz.html'">Start Quiz</button>
+        </div>
+        <div class="mock-test">
+            <h3>Mock Test: Physics</h3>
+            <p>Practice your physics knowledge with this mock test.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/sceincetest.html'">Start Test</button>
+        </div>
+    </div>
+
+    <!-- Mathematics Section -->
+    <div class="section">
+        <h2>Mathematics</h2>
+        <div class="quiz">
+            <h3>Math Quiz</h3>
+            <p>Test your math skills with this fun quiz.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/mathsQuiz.html'">Start Quiz</button>
+        </div>
+        <div class="mock-test">
+            <h3>Mock Test: Algebra</h3>
+            <p>Practice algebra problems with this mock test.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/mathstest.html'">Start Test</button>
+        </div>
+    </div>
+
+    <!-- Coding Section -->
+    <div class="section">
+        <h2>Coding</h2>
+        <div class="quiz">
+            <h3>Programming Quiz</h3>
+            <p>Test your coding knowledge with this programming quiz.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/codeQuiz.html'">Start Quiz</button>
+        </div>
+        <div class="mock-test">
+            <h3>Mock Test: Python</h3>
+            <p>Practice your Python skills with this mock test.</p>
+            <button class="btn" onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/codeTest.html'">Start Test</button>
+        </div>
+    </div>
+
+    <!-- Quiz Games Section -->
+    <div class="section">
+        <h2>Quiz Games</h2>
+        <div class="quiz">
+            <h3>Trivia Game</h3>
+            <p>Play a fun trivia game and test your general knowledge.</p>
+            <button class="btn" onclick="startQuiz('Trivia')">Play Game</button>
+        </div>
+        <div class="quiz">
+            <h3>Riddles Challenge</h3>
+            <p>Solve riddles and challenge your thinking skills.</p>
+            <button class="btn" onclick="startQuiz('Riddles')">Start Challenge</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript functions for starting quizzes and mock tests
+        function startQuiz(quizName) {
+            alert(`Starting ${quizName} Quiz!`);
+            // Add logic to redirect to the quiz page or load quiz questions
+        }
+
+        function startMockTest(testName) {
+            alert(`Starting ${testName} Mock Test!`);
+            // Add logic to redirect to the mock test page or load test questions
+        }
+
+        // Scrolling preloader effect
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

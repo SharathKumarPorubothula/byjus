@@ -1,0 +1,186 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+ </head>
+ <body>
+    <div class="Home container-fluid">
+    <div class="Home1">
+        <h2 class="H-h2">&nbsp;&nbsp;&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+          </svg>&nbsp;L&P</h2>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="./images/H-i1.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="color: white;">Get two teacher advantage and <br> doubt resolution through <b>Live Clasess</b></h5>
+                  <!-- <p>Get two teacher advantage and doubt resolution through <b>Live Clasess</b>.</p> -->
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="./images/H-i2.png" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="color: white;">Gain conceptual clarity with <br> <b>interactive study material</b></h5>
+                  <!-- <p>Gain conceptual clarity with <b>interactive study material</b></p> -->
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./images/H-i3.webp" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 style="color: white;">Check your proficency and prepare for <br> exams with the <b>Practice Quetions</b></h5>
+                  <!-- <p>Check your proficency and prepare for exams with the <b>Practice Quetions</b></p> -->
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+
+
+
+    <div class="Home2">
+      <div class="auth-container">
+          <div class="auth-tabs">
+              <button class="tab-link active" onclick="openTab('login')">Login</button>
+              <button class="tab-link" onclick="openTab('signup')">Sign Up</button>
+          </div>
+          <div id="login" id="login-form" class="auth-form active">
+              <h2>Welcome Back!</h2>
+              <form>
+                  <div class="form-group">
+                      <label for="login-email">Email</label>
+                      <input type="email" id="login-email" placeholder="Enter your email" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="login-password">Password</label>
+                      <input type="password" id="login-password" placeholder="Enter your password" required>
+                  </div>
+                  <button type="submit" class="btn-primary" onclick="userLogin(event)">Login</button>
+              </form>
+          </div> 
+          <div id="signup" id="signup-form" class="auth-form">
+              <h2>Create an Account</h2>
+              <form>
+                  <div class="form-group">
+                      <label for="signup-username">Username</label>
+                      <input type="text" id="signup-username" placeholder="Choose a username" required>
+                      <small class="error-message" id="username-error">Username is required.</small>
+                  </div>
+                  <div class="form-group">
+                      <label for="signup-email">Email</label>
+                      <input type="email" id="signup-email" placeholder="Enter your email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+                      <small class="error-message" id="email-error">Please enter a valid email address.</small>
+                  </div>
+                  <div class="form-group">
+                      <label for="signup-password">Password</label>
+                      <input type="password" id="signup-password" placeholder="Choose a password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+                      <small class="error-message" id="password-error">Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.</small>
+                  </div>
+                  <button type="submit" class="btn-primary" onclick="signUp(event)">Sign Up</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <div id="spinner">
+    <div class="spinner"></div>
+  </div>
+
+<script type="/module" src="script2.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="./script.js" ></script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    
+      const firebaseConfig = {
+        apiKey: "AIzaSyBXrKaXA9ynGwBvnxWNt9dK21HzAP1UzNE",
+        authDomain: "learning-e9f3c.firebaseapp.com",
+        projectId: "learning-e9f3c",
+        storageBucket: "learning-e9f3c.appspot.com",
+        messagingSenderId: "369739031967",
+        appId: "1:369739031967:web:b276d24b9b2e447efd49aa"
+      };
+    
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+    
+      window.signUp = function (event) {
+        event.preventDefault(); // Prevent form submission
+        let username = document.getElementById("signup-username").value; // Get username
+        let email = document.getElementById("signup-email").value;
+        let password = document.getElementById("signup-password").value;
+    
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            alert("User Registered Successfully!");
+            // Store the username and email in localStorage
+            localStorage.setItem("userName", username);
+            localStorage.setItem("userEmail", email);
+            // Redirect to the profile page or any other page
+            window.location.href = "file:///C:/Users/DELL/OneDrive/Desktop/byjus/index2.html";
+          })
+          .catch((error) => {
+            alert("Provide valid Credentials");
+          });
+      };
+    
+      window.userLogin = function (event) {
+        event.preventDefault();
+        let email = document.getElementById("login-email").value;
+        let password = document.getElementById("login-password").value;
+    
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Retrieve the username from localStorage (if available)
+            const username = localStorage.getItem("userName");
+            // Store the username and email in localStorage
+            localStorage.setItem("userName", username || "User"); // Default to "User" if username is not found
+            localStorage.setItem("userEmail", email);
+            
+            document.getElementById("spinner").style.display = "block";
+
+      // Add fade-out class to the body
+      document.body.classList.add("fade-out");
+
+      // Wait for the animation to complete, then redirect
+      setTimeout(() => {
+        window.location.href = "file:///C:/Users/DELL/OneDrive/Desktop/byjus/index2.html";
+      }, 300); // Match the duration of the fade-out animation
+          })
+          .catch((error) => {
+            alert("Invalid Credentials");
+          });
+      };
+
+      // Hide the spinner when the page loads
+    window.addEventListener("load", () => {
+      document.getElementById("spinner").style.display = "none";
+    });
+
+    </script>
+    
+ </body>
+ </html>

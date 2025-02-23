@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Test and Quiz</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .quiz {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .quiz h2 {
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question p {
+            font-weight: bold;
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>English Test</h1>
+
+    <!-- Vocabulary & Synonyms -->
+    <div class="quiz">
+        <h2>Vocabulary & Synonyms</h2>
+        <div class="question">
+            <p>Q1: Choose the synonym of "Abundant"</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Scarce</label>
+                <label><input type="radio" name="q1" value="b"> Plentiful</label>
+                <label><input type="radio" name="q1" value="c"> Insufficient</label>
+                <label><input type="radio" name="q1" value="d"> Limited</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q2: Choose the synonym of "Eloquent"</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Speechless</label>
+                <label><input type="radio" name="q2" value="b"> Fluent</label>
+                <label><input type="radio" name="q2" value="c"> Quiet</label>
+                <label><input type="radio" name="q2" value="d"> Awkward</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q3: Choose the synonym of "Fragile"</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Strong</label>
+                <label><input type="radio" name="q3" value="b"> Delicate</label>
+                <label><input type="radio" name="q3" value="c"> Harsh</label>
+                <label><input type="radio" name="q3" value="d"> Rough</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Antonyms -->
+    <div class="quiz">
+        <h2>Antonyms</h2>
+        <div class="question">
+            <p>Q4: Choose the antonym of "Diligent"</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Hardworking</label>
+                <label><input type="radio" name="q4" value="b"> Lazy</label>
+                <label><input type="radio" name="q4" value="c"> Intelligent</label>
+                <label><input type="radio" name="q4" value="d"> Careful</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q5: Choose the antonym of "Expand"</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Contract</label>
+                <label><input type="radio" name="q5" value="b"> Stretch</label>
+                <label><input type="radio" name="q5" value="c"> Enlarge</label>
+                <label><input type="radio" name="q5" value="d"> Increase</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q6: Choose the antonym of "Artificial"</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> Synthetic</label>
+                <label><input type="radio" name="q6" value="b"> Genuine</label>
+                <label><input type="radio" name="q6" value="c"> Unreal</label>
+                <label><input type="radio" name="q6" value="d"> Fake</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grammar & Sentence Correction -->
+    <div class="quiz">
+        <h2>Grammar & Sentence Correction</h2>
+        <div class="question">
+            <p>Q7: Choose the correct sentence:</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> She don’t like ice cream.</label>
+                <label><input type="radio" name="q7" value="b"> She doesn’t like ice cream.</label>
+                <label><input type="radio" name="q7" value="c"> She didn’t liked ice cream.</label>
+                <label><input type="radio" name="q7" value="d"> She don’t likes ice cream.</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q8: Identify the incorrect sentence:</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> He goes to school every day.</label>
+                <label><input type="radio" name="q8" value="b"> She eat lunch at 2 PM.</label>
+                <label><input type="radio" name="q8" value="c"> They are playing football.</label>
+                <label><input type="radio" name="q8" value="d"> I have completed my homework.</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q9: Fill in the blank: "The book ______ on the table."</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> is</label>
+                <label><input type="radio" name="q9" value="b"> are</label>
+                <label><input type="radio" name="q9" value="c"> were</label>
+                <label><input type="radio" name="q9" value="d"> have</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tenses -->
+    <div class="quiz">
+        <h2>Tenses</h2>
+        <div class="question">
+            <p>Q10: Choose the correct form of the verb: "She ______ (study) for her exam now."</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> studies</label>
+                <label><input type="radio" name="q10" value="b"> studied</label>
+                <label><input type="radio" name="q10" value="c"> is studying</label>
+                <label><input type="radio" name="q10" value="d"> will study</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q11: Identify the tense: "I had completed my work before you arrived."</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> Simple Past</label>
+                <label><input type="radio" name="q11" value="b"> Past Perfect</label>
+                <label><input type="radio" name="q11" value="c"> Present Perfect</label>
+                <label><input type="radio" name="q11" value="d"> Future Perfect</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q12: Choose the correct tense: "By next year, she ______ (graduate)."</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> will graduate</label>
+                <label><input type="radio" name="q12" value="b"> will have graduated</label>
+                <label><input type="radio" name="q12" value="c"> is graduating</label>
+                <label><input type="radio" name="q12" value="d"> graduated</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active & Passive Voice -->
+    <div class="quiz">
+        <h2>Active & Passive Voice</h2>
+        <div class="question">
+            <p>Q13: Convert into passive voice: "They completed the project."</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> The project was completed by them.</label>
+                <label><input type="radio" name="q13" value="b"> The project completes them.</label>
+                <label><input type="radio" name="q13" value="c"> The project is completing by them.</label>
+                <label><input type="radio" name="q13" value="d"> The project has completed them.</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q14: Convert into active voice: "The letter was written by her."</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> She writes the letter.</label>
+                <label><input type="radio" name="q14" value="b"> She wrote the letter.</label>
+                <label><input type="radio" name="q14" value="c"> She had written the letter.</label>
+                <label><input type="radio" name="q14" value="d"> She will write the letter.</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Direct & Indirect Speech -->
+    <div class="quiz">
+        <h2>Direct & Indirect Speech</h2>
+        <div class="question">
+            <p>Q15: Convert into indirect speech: She said, "I am tired."</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> She said that she is tired.</label>
+                <label><input type="radio" name="q15" value="b"> She said that she was tired.</label>
+                <label><input type="radio" name="q15" value="c"> She says that she is tired.</label>
+                <label><input type="radio" name="q15" value="d"> She said she tired.</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q16: Convert into direct speech: He said that he would call me.</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> He said, "I call you."</label>
+                <label><input type="radio" name="q16" value="b"> He said, "I will call you."</label>
+                <label><input type="radio" name="q16" value="c"> He said, "I would calling you."</label>
+                <label><input type="radio" name="q16" value="d"> He says, "I called you."</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prepositions -->
+    <div class="quiz">
+        <h2>Prepositions</h2>
+        <div class="question">
+            <p>Q17: Choose the correct preposition: "He is interested ______ music."</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> on</label>
+                <label><input type="radio" name="q17" value="b"> in</label>
+                <label><input type="radio" name="q17" value="c"> at</label>
+                <label><input type="radio" name="q17" value="d"> over</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q18: Choose the correct preposition: "The book is ______ the table."</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> in</label>
+                <label><input type="radio" name="q18" value="b"> on</label>
+                <label><input type="radio" name="q18" value="c"> at</label>
+                <label><input type="radio" name="q18" value="d"> to</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Articles -->
+    <div class="quiz">
+        <h2>Articles</h2>
+        <div class="question">
+            <p>Q19: Choose the correct article: "She is ______ honest person."</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> a</label>
+                <label><input type="radio" name="q19" value="b"> an</label>
+                <label><input type="radio" name="q19" value="c"> the</label>
+                <label><input type="radio" name="q19" value="d"> no article</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q20: Choose the correct article: "I saw ______ eagle flying in the sky."</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> a</label>
+                <label><input type="radio" name="q20" value="b"> an</label>
+                <label><input type="radio" name="q20" value="c"> the</label>
+                <label><input type="radio" name="q20" value="d"> no article</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pronouns -->
+    <div class="quiz">
+        <h2>Pronouns</h2>
+        <div class="question">
+            <p>Q21: Choose the correct pronoun: "This gift is for you and ______."</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> I</label>
+                <label><input type="radio" name="q21" value="b"> me</label>
+                <label><input type="radio" name="q21" value="c"> my</label>
+                <label><input type="radio" name="q21" value="d"> myself</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q22: Choose the correct pronoun: "She loves to travel by ______."</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> herself</label>
+                <label><input type="radio" name="q22" value="b"> himself</label>
+                <label><input type="radio" name="q22" value="c"> itself</label>
+                <label><input type="radio" name="q22" value="d"> themselves</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adjectives & Adverbs -->
+    <div class="quiz">
+        <h2>Adjectives & Adverbs</h2>
+        <div class="question">
+            <p>Q23: Choose the correct adjective: "She wore a ______ dress."</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> beautiful</label>
+                <label><input type="radio" name="q23" value="b"> beautifully</label>
+                <label><input type="radio" name="q23" value="c"> beauty</label>
+                <label><input type="radio" name="q23" value="d"> beautify</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q24: Choose the correct adverb: "He speaks English ______."</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> fluent</label>
+                <label><input type="radio" name="q24" value="b"> fluently</label>
+                <label><input type="radio" name="q24" value="c"> fluency</label>
+                <label><input type="radio" name="q24" value="d"> fluenting</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conjunctions -->
+    <div class="quiz">
+        <h2>Conjunctions</h2>
+        <div class="question">
+            <p>Q25: Choose the correct conjunction: "I was late ______ the traffic was heavy."</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> so</label>
+                <label><input type="radio" name="q25" value="b"> because</label>
+                <label><input type="radio" name="q25" value="c"> but</label>
+                <label><input type="radio" name="q25" value="d"> and</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q26: Choose the correct conjunction: "She is not only smart ______ also kind."</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> and</label>
+                <label><input type="radio" name="q26" value="b"> but</label>
+                <label><input type="radio" name="q26" value="c"> but also</label>
+                <label><input type="radio" name="q26" value="d"> so</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sentence Completion -->
+    <div class="quiz">
+        <h2>Sentence Completion</h2>
+        <div class="question">
+            <p>Q27: Choose the correct word: "The train ______ before we reached the station."</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> left</label>
+                <label><input type="radio" name="q27" value="b"> has left</label>
+                <label><input type="radio" name="q27" value="c"> had left</label>
+                <label><input type="radio" name="q27" value="d"> leaves</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q28: Choose the correct word: "If I ______ you, I would apologize."</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> am</label>
+                <label><input type="radio" name="q28" value="b"> was</label>
+                <label><input type="radio" name="q28" value="c"> were</label>
+                <label><input type="radio" name="q28" value="d"> be</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Idioms & Phrases -->
+    <div class="quiz">
+        <h2>Idioms & Phrases</h2>
+        <div class="question">
+            <p>Q29: What does "Break the ice" mean?</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> To start a conversation</label>
+                <label><input type="radio" name="q29" value="b"> To break something</label>
+                <label><input type="radio" name="q29" value="c"> To go on an adventure</label>
+                <label><input type="radio" name="q29" value="d"> To feel cold</label>
+            </div>
+        </div>
+        <div class="question">
+            <p>Q30: What does "Hit the sack" mean?</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> To start working</label>
+                <label><input type="radio" name="q30" value="b"> To go to sleep</label>
+                <label><input type="radio" name="q30" value="c"> To win a competition</label>
+                <label><input type="radio" name="q30" value="d"> To argue with someone</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Button and Result -->
+    <button class="btn" onclick="checkAnswers()">Submit</button>
+    <div class="result" id="quiz-result"></div>
+
+    <script>
+        // Correct answers for the quiz
+        const correctAnswers = {
+            q1: 'b', // Plentiful
+            q2: 'b', // Fluent
+            q3: 'b', // Delicate
+            q4: 'b', // Lazy
+            q5: 'a', // Contract
+            q6: 'b', // Genuine
+            q7: 'b', // She doesn’t like ice cream.
+            q8: 'b', // She eat lunch at 2 PM.
+            q9: 'a', // is
+            q10: 'c', // is studying
+            q11: 'b', // Past Perfect
+            q12: 'b', // will have graduated
+            q13: 'a', // The project was completed by them.
+            q14: 'b', // She wrote the letter.
+            q15: 'b', // She said that she was tired.
+            q16: 'b', // He said, "I will call you."
+            q17: 'b', // in
+            q18: 'b', // on
+            q19: 'b', // an
+            q20: 'b', // an
+            q21: 'b', // me
+            q22: 'a', // herself
+            q23: 'a', // beautiful
+            q24: 'b', // fluently
+            q25: 'b', // because
+            q26: 'c', // but also
+            q27: 'c', // had left
+            q28: 'c', // were
+            q29: 'a', // To start a conversation
+            q30: 'b'  // To go to sleep
+        };
+
+        // Function to check answers
+        function checkAnswers() {
+            let score = 0;
+            const questions = Object.keys(correctAnswers);
+            questions.forEach((question) => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            });
+            const resultElement = document.getElementById('quiz-result');
+            resultElement.textContent = `You scored ${score} out of ${questions.length}!`;
+        }
+    </script>
+</body>
+</html>

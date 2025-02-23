@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Quiz</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .quiz {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .options {
+            margin-left: 20px;
+            text-align: left;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Science Test</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz">
+        <!-- Physics Section -->
+        <h2>Physics</h2>
+        <!-- Question 1 -->
+        <div class="question">
+            <p>Q1: What is the speed of light in a vacuum?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> 3 × 10⁵ km/s</label>
+                <label><input type="radio" name="q1" value="b"> 3 × 10⁶ km/s</label>
+                <label><input type="radio" name="q1" value="c"> 3 × 10⁸ m/s</label>
+                <label><input type="radio" name="q1" value="d"> 3 × 10⁷ m/s</label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>Q2: Which of the following is a unit of force?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Joule</label>
+                <label><input type="radio" name="q2" value="b"> Watt</label>
+                <label><input type="radio" name="q2" value="c"> Newton</label>
+                <label><input type="radio" name="q2" value="d"> Pascal</label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>Q3: What is the SI unit of power?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> Joule</label>
+                <label><input type="radio" name="q3" value="b"> Newton</label>
+                <label><input type="radio" name="q3" value="c"> Pascal</label>
+                <label><input type="radio" name="q3" value="d"> Watt</label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>Q4: Which law states that for every action, there is an equal and opposite reaction?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Newton’s Third Law</label>
+                <label><input type="radio" name="q4" value="b"> Newton’s First Law</label>
+                <label><input type="radio" name="q4" value="c"> Newton’s Second Law</label>
+                <label><input type="radio" name="q4" value="d"> Law of Inertia</label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>Q5: What type of energy is stored in a stretched rubber band?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> Kinetic Energy</label>
+                <label><input type="radio" name="q5" value="b"> Potential Energy</label>
+                <label><input type="radio" name="q5" value="c"> Thermal Energy</label>
+                <label><input type="radio" name="q5" value="d"> Chemical Energy</label>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>Q6: What is the boiling point of water in Celsius?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> 90°C</label>
+                <label><input type="radio" name="q6" value="b"> 100°C</label>
+                <label><input type="radio" name="q6" value="c"> 110°C</label>
+                <label><input type="radio" name="q6" value="d"> 120°C</label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>Q7: What is the unit of electrical resistance?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> Ampere</label>
+                <label><input type="radio" name="q7" value="b"> Coulomb</label>
+                <label><input type="radio" name="q7" value="c"> Watt</label>
+                <label><input type="radio" name="q7" value="d"> Ohm</label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>Q8: What device is used to measure electric current?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Voltmeter</label>
+                <label><input type="radio" name="q8" value="b"> Ammeter</label>
+                <label><input type="radio" name="q8" value="c"> Barometer</label>
+                <label><input type="radio" name="q8" value="d"> Hygrometer</label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>Q9: What is the acceleration due to gravity on Earth?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> 8.9 m/s²</label>
+                <label><input type="radio" name="q9" value="b"> 9.8 m/s²</label>
+                <label><input type="radio" name="q9" value="c"> 10.5 m/s²</label>
+                <label><input type="radio" name="q9" value="d"> 11.2 m/s²</label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>Q10: What is the main gas found in the Sun?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> Hydrogen</label>
+                <label><input type="radio" name="q10" value="b"> Oxygen</label>
+                <label><input type="radio" name="q10" value="c"> Carbon Dioxide</label>
+                <label><input type="radio" name="q10" value="d"> Helium</label>
+            </div>
+        </div>
+
+        <!-- Chemistry Section -->
+        <h2>Chemistry</h2>
+        <!-- Question 11 -->
+        <div class="question">
+            <p>Q11: What is the chemical formula of water?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> H₂O₂</label>
+                <label><input type="radio" name="q11" value="b"> H₂O</label>
+                <label><input type="radio" name="q11" value="c"> CO₂</label>
+                <label><input type="radio" name="q11" value="d"> O₂</label>
+            </div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <p>Q12: What is the pH value of pure water?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> 5</label>
+                <label><input type="radio" name="q12" value="b"> 6</label>
+                <label><input type="radio" name="q12" value="c"> 7</label>
+                <label><input type="radio" name="q12" value="d"> 8</label>
+            </div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <p>Q13: Which metal is the best conductor of electricity?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> Iron</label>
+                <label><input type="radio" name="q13" value="b"> Silver</label>
+                <label><input type="radio" name="q13" value="c"> Copper</label>
+                <label><input type="radio" name="q13" value="d"> Gold</label>
+            </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <p>Q14: What is the chemical symbol for gold?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> Au</label>
+                <label><input type="radio" name="q14" value="b"> Ag</label>
+                <label><input type="radio" name="q14" value="c"> Au</label>
+                <label><input type="radio" name="q14" value="d"> Fe</label>
+            </div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <p>Q15: What type of reaction is the rusting of iron?</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> Decomposition</label>
+                <label><input type="radio" name="q15" value="b"> Oxidation</label>
+                <label><input type="radio" name="q15" value="c"> Reduction</label>
+                <label><input type="radio" name="q15" value="d"> Neutralization</label>
+            </div>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <p>Q16: What is the lightest element in the periodic table?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> Hydrogen</label>
+                <label><input type="radio" name="q16" value="b"> Helium</label>
+                <label><input type="radio" name="q16" value="c"> Oxygen</label>
+                <label><input type="radio" name="q16" value="d"> Nitrogen</label>
+            </div>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <p>Q17: Which gas is known as "laughing gas"?</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> Carbon dioxide</label>
+                <label><input type="radio" name="q17" value="b"> Nitrous oxide (N₂O)</label>
+                <label><input type="radio" name="q17" value="c"> Oxygen</label>
+                <label><input type="radio" name="q17" value="d"> Hydrogen</label>
+            </div>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <p>Q18: What is the atomic number of carbon?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> 5</label>
+                <label><input type="radio" name="q18" value="b"> 6</label>
+                <label><input type="radio" name="q18" value="c"> 7</label>
+                <label><input type="radio" name="q18" value="d"> 8</label>
+            </div>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <p>Q19: Which acid is found in lemon?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> Acetic acid</label>
+                <label><input type="radio" name="q19" value="b"> Hydrochloric acid</label>
+                <label><input type="radio" name="q19" value="c"> Citric acid</label>
+                <label><input type="radio" name="q19" value="d"> Sulfuric acid</label>
+            </div>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <p>Q20: Which chemical element is present in all organic compounds?</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> Carbon</label>
+                <label><input type="radio" name="q20" value="b"> Oxygen</label>
+                <label><input type="radio" name="q20" value="c"> Hydrogen</label>
+                <label><input type="radio" name="q20" value="d"> Nitrogen</label>
+            </div>
+        </div>
+
+        <!-- Biology Section -->
+        <h2>Biology</h2>
+        <!-- Question 21 -->
+        <div class="question">
+            <p>Q21: What is the powerhouse of the cell?</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> Nucleus</label>
+                <label><input type="radio" name="q21" value="b"> Mitochondria</label>
+                <label><input type="radio" name="q21" value="c"> Ribosome</label>
+                <label><input type="radio" name="q21" value="d"> Golgi apparatus</label>
+            </div>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="question">
+            <p>Q22: What is the main function of red blood cells?</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> Fight infection</label>
+                <label><input type="radio" name="q22" value="b"> Carry nutrients</label>
+                <label><input type="radio" name="q22" value="c"> Transport oxygen</label>
+                <label><input type="radio" name="q22" value="d"> Produce hormones</label>
+            </div>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="question">
+            <p>Q23: Which vitamin is produced by the human body when exposed to sunlight?</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> Vitamin A</label>
+                <label><input type="radio" name="q23" value="b"> Vitamin D</label>
+                <label><input type="radio" name="q23" value="c"> Vitamin C</label>
+                <label><input type="radio" name="q23" value="d"> Vitamin B</label>
+            </div>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="question">
+            <p>Q24: What is the largest organ in the human body?</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> Heart</label>
+                <label><input type="radio" name="q24" value="b"> Skin</label>
+                <label><input type="radio" name="q24" value="c"> Liver</label>
+                <label><input type="radio" name="q24" value="d"> Brain</label>
+            </div>
+        </div>
+
+        <!-- Question 25 -->
+        <div class="question">
+            <p>Q25: What is the main function of the kidneys?</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> Filter blood and remove waste</label>
+                <label><input type="radio" name="q25" value="b"> Digest food</label>
+                <label><input type="radio" name="q25" value="c"> Pump blood</label>
+                <label><input type="radio" name="q25" value="d"> Produce insulin</label>
+            </div>
+        </div>
+
+        <!-- Question 26 -->
+        <div class="question">
+            <p>Q26: Which part of the plant carries out photosynthesis?</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> Root</label>
+                <label><input type="radio" name="q26" value="b"> Leaf</label>
+                <label><input type="radio" name="q26" value="c"> Stem</label>
+                <label><input type="radio" name="q26" value="d"> Flower</label>
+            </div>
+        </div>
+
+        <!-- Question 27 -->
+        <div class="question">
+            <p>Q27: What is the structural and functional unit of the nervous system?</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> Neuron</label>
+                <label><input type="radio" name="q27" value="b"> Red blood cell</label>
+                <label><input type="radio" name="q27" value="c"> Platelet</label>
+                <label><input type="radio" name="q27" value="d"> Alveolus</label>
+            </div>
+        </div>
+
+        <!-- Question 28 -->
+        <div class="question">
+            <p>Q28: Which gas do plants absorb during photosynthesis?</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> Oxygen</label>
+                <label><input type="radio" name="q28" value="b"> Carbon dioxide</label>
+                <label><input type="radio" name="q28" value="c"> Nitrogen</label>
+                <label><input type="radio" name="q28" value="d"> Hydrogen</label>
+            </div>
+        </div>
+
+        <!-- Question 29 -->
+        <div class="question">
+            <p>Q29: What is the scientific name of the human species?</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> Homo sapiens</label>
+                <label><input type="radio" name="q29" value="b"> Homo erectus</label>
+                <label><input type="radio" name="q29" value="c"> Australopithecus</label>
+                <label><input type="radio" name="q29" value="d"> Neanderthal</label>
+            </div>
+        </div>
+
+        <!-- Question 30 -->
+        <div class="question">
+            <p>Q30: Which blood group is known as the universal donor?</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> O negative</label>
+                <label><input type="radio" name="q30" value="b"> A positive</label>
+                <label><input type="radio" name="q30" value="c"> AB positive</label>
+                <label><input type="radio" name="q30" value="d"> B negative</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="btn" onclick="checkAnswers()">Submit</button>
+        <div class="result" id="quiz-result"></div>
+    </div>
+
+    <script>
+        // Correct answers for the quiz
+        const correctAnswers = {
+            q1: 'c', // 3 × 10⁸ m/s
+            q2: 'c', // Newton
+            q3: 'd', // Watt
+            q4: 'a', // Newton’s Third Law
+            q5: 'b', // Potential Energy
+            q6: 'b', // 100°C
+            q7: 'd', // Ohm
+            q8: 'b', // Ammeter
+            q9: 'b', // 9.8 m/s²
+            q10: 'a', // Hydrogen
+            q11: 'b', // H₂O
+            q12: 'c', // 7
+            q13: 'b', // Silver
+            q14: 'a', // Au
+            q15: 'b', // Oxidation
+            q16: 'a', // Hydrogen
+            q17: 'b', // Nitrous oxide (N₂O)
+            q18: 'b', // 6
+            q19: 'c', // Citric acid
+            q20: 'a', // Carbon
+            q21: 'b', // Mitochondria
+            q22: 'c', // Transport oxygen
+            q23: 'b', // Vitamin D
+            q24: 'b', // Skin
+            q25: 'a', // Filter blood and remove waste
+            q26: 'b', // Leaf
+            q27: 'a', // Neuron
+            q28: 'b', // Carbon dioxide
+            q29: 'a', // Homo sapiens
+            q30: 'a'  // O negative
+        };
+
+        // Function to check answers
+        function checkAnswers() {
+            let score = 0;
+            const questions = Object.keys(correctAnswers);
+            questions.forEach((question) => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            });
+            const resultElement = document.getElementById('quiz-result');
+            resultElement.textContent = `You scored ${score} out of ${questions.length}!`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .question {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .question h3 {
+            color: #2575fc;
+            margin-bottom: 15px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .option:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .correct {
+            background-color: #4caf50 !important; /* Green for correct answers */
+        }
+        .incorrect {
+            background-color: #f44336 !important; /* Red for incorrect answers */
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+
+        /* Skeleton Loading Effect */
+        .skeleton {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            animation: shimmer 1.5s infinite linear;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+            background-size: 200% 100%;
+        }
+
+        .skeleton-question {
+            height: 30px;
+            width: 80%;
+            margin: 10px auto;
+            border-radius: 4px;
+        }
+
+        .skeleton-option {
+            height: 20px;
+            width: 90%;
+            margin: 5px auto;
+            border-radius: 4px;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Trivia Game</h1>
+    <p>Test your general knowledge with these fun trivia questions! Select the correct answer for each question.</p>
+
+    <!-- Skeleton Loading Placeholder -->
+    <div id="skeleton-loader">
+        <div class="question skeleton">
+            <div class="skeleton-question"></div>
+            <div class="options">
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+            </div>
+        </div>
+        <div class="question skeleton">
+            <div class="skeleton-question"></div>
+            <div class="options">
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+            </div>
+        </div>
+        <div class="question skeleton">
+            <div class="skeleton-question"></div>
+            <div class="options">
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+            </div>
+        </div>
+        <div class="question skeleton">
+            <div class="skeleton-question"></div>
+            <div class="options">
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+            </div>
+        </div>
+        <div class="question skeleton">
+            <div class="skeleton-question"></div>
+            <div class="options">
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+                <div class="skeleton-option"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Actual Questions Content (Hidden Initially) -->
+    <div id="questions-content" style="display: none;">
+        <!-- Question 1 -->
+        <div class="question">
+            <h3>1. What is the capital of France?</h3>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'Paris')">A. Paris</div>
+                <div class="option" onclick="checkAnswer(this, 'London')">B. London</div>
+                <div class="option" onclick="checkAnswer(this, 'Berlin')">C. Berlin</div>
+                <div class="option" onclick="checkAnswer(this, 'Madrid')">D. Madrid</div>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h3>2. Who wrote the play "Romeo and Juliet"?</h3>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'William Shakespeare')">A. William Shakespeare</div>
+                <div class="option" onclick="checkAnswer(this, 'Charles Dickens')">B. Charles Dickens</div>
+                <div class="option" onclick="checkAnswer(this, 'Mark Twain')">C. Mark Twain</div>
+                <div class="option" onclick="checkAnswer(this, 'Jane Austen')">D. Jane Austen</div>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h3>3. What is the largest planet in our solar system?</h3>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'Jupiter')">A. Jupiter</div>
+                <div class="option" onclick="checkAnswer(this, 'Saturn')">B. Saturn</div>
+                <div class="option" onclick="checkAnswer(this, 'Earth')">C. Earth</div>
+                <div class="option" onclick="checkAnswer(this, 'Mars')">D. Mars</div>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h3>4. Which country won the FIFA World Cup in 2018?</h3>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'France')">A. France</div>
+                <div class="option" onclick="checkAnswer(this, 'Brazil')">B. Brazil</div>
+                <div class="option" onclick="checkAnswer(this, 'Germany')">C. Germany</div>
+                <div class="option" onclick="checkAnswer(this, 'Argentina')">D. Argentina</div>
+            </div>
+            <div class="feedback" id="feedback4"></div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h3>5. What is the chemical symbol for water?</h3>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'H2O')">A. H2O</div>
+                <div class="option" onclick="checkAnswer(this, 'CO2')">B. CO2</div>
+                <div class="option" onclick="checkAnswer(this, 'O2')">C. O2</div>
+                <div class="option" onclick="checkAnswer(this, 'NaCl')">D. NaCl</div>
+            </div>
+            <div class="feedback" id="feedback5"></div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate a loading delay
+        setTimeout(() => {
+            // Hide the skeleton loader
+            document.getElementById('skeleton-loader').style.display = 'none';
+            // Show the actual questions content
+            document.getElementById('questions-content').style.display = 'block';
+        }, 2000); // 2 seconds delay
+
+        // JavaScript function to check answers
+        function checkAnswer(selectedOption, correctAnswer) {
+            const feedbackId = selectedOption.parentElement.nextElementSibling.id;
+            const feedback = document.getElementById(feedbackId);
+
+            if (selectedOption.textContent.includes(correctAnswer)) {
+                selectedOption.classList.add('correct');
+                feedback.textContent = "Correct! 🎉";
+                feedback.style.color = "#4caf50";
+            } else {
+                selectedOption.classList.add('incorrect');
+                feedback.textContent = "Incorrect! 😢 The correct answer is: " + correctAnswer;
+                feedback.style.color = "#f44336";
+            }
+
+            // Disable further clicks on options
+            const options = selectedOption.parentElement.children;
+            for (let option of options) {
+                option.style.pointerEvents = "none";
+            }
+        }
+    </script>
+</body>
+</html>

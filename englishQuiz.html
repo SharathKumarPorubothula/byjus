@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Quiz Game</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .quiz {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .options {
+            margin-left: 20px;
+            text-align: left;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>English Quiz Game</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>Q1: Choose the synonym of "Abundant":</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> Scarce</label>
+                <label><input type="radio" name="q1" value="b"> Plentiful</label>
+                <label><input type="radio" name="q1" value="c"> Insufficient</label>
+                <label><input type="radio" name="q1" value="d"> Limited</label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>Q2: Choose the antonym of "Diligent":</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Hardworking</label>
+                <label><input type="radio" name="q2" value="b"> Lazy</label>
+                <label><input type="radio" name="q2" value="c"> Intelligent</label>
+                <label><input type="radio" name="q2" value="d"> Careful</label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>Q3: Choose the correct sentence:</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> She don’t like ice cream.</label>
+                <label><input type="radio" name="q3" value="b"> She doesn’t like ice cream.</label>
+                <label><input type="radio" name="q3" value="c"> She didn’t liked ice cream.</label>
+                <label><input type="radio" name="q3" value="d"> She don’t likes ice cream.</label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>Q4: What is the past tense of "go"?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> Went</label>
+                <label><input type="radio" name="q4" value="b"> Gone</label>
+                <label><input type="radio" name="q4" value="c"> Going</label>
+                <label><input type="radio" name="q4" value="d"> Goes</label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>Q5: Choose the correct preposition: "The book is ______ the table."</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> in</label>
+                <label><input type="radio" name="q5" value="b"> on</label>
+                <label><input type="radio" name="q5" value="c"> at</label>
+                <label><input type="radio" name="q5" value="d"> to</label>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>Q6: What does "Break the ice" mean?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> To start a conversation</label>
+                <label><input type="radio" name="q6" value="b"> To break something</label>
+                <label><input type="radio" name="q6" value="c"> To go on an adventure</label>
+                <label><input type="radio" name="q6" value="d"> To feel cold</label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>Q7: Choose the correct article: "She is ______ honest person."</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> a</label>
+                <label><input type="radio" name="q7" value="b"> an</label>
+                <label><input type="radio" name="q7" value="c"> the</label>
+                <label><input type="radio" name="q7" value="d"> no article</label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>Q8: Choose the correct pronoun: "This gift is for you and ______."</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> I</label>
+                <label><input type="radio" name="q8" value="b"> me</label>
+                <label><input type="radio" name="q8" value="c"> my</label>
+                <label><input type="radio" name="q8" value="d"> myself</label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>Q9: Choose the correct adverb: "He speaks English ______."</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> fluent</label>
+                <label><input type="radio" name="q9" value="b"> fluently</label>
+                <label><input type="radio" name="q9" value="c"> fluency</label>
+                <label><input type="radio" name="q9" value="d"> fluenting</label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>Q10: What does "Hit the sack" mean?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> To start working</label>
+                <label><input type="radio" name="q10" value="b"> To go to sleep</label>
+                <label><input type="radio" name="q10" value="c"> To win a competition</label>
+                <label><input type="radio" name="q10" value="d"> To argue with someone</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="btn" onclick="checkAnswers()">Submit</button>
+        <div class="result" id="quiz-result"></div>
+    </div>
+
+    <script>
+        // Correct answers for the quiz
+        const correctAnswers = {
+            q1: 'b', // Plentiful
+            q2: 'b', // Lazy
+            q3: 'b', // She doesn’t like ice cream.
+            q4: 'a', // Went
+            q5: 'b', // on
+            q6: 'a', // To start a conversation
+            q7: 'b', // an
+            q8: 'b', // me
+            q9: 'b', // fluently
+            q10: 'b' // To go to sleep
+        };
+
+        // Function to check answers
+        function checkAnswers() {
+            let score = 0;
+            const questions = Object.keys(correctAnswers);
+            questions.forEach((question) => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            });
+            const resultElement = document.getElementById('quiz-result');
+            resultElement.textContent = `You scored ${score} out of ${questions.length}!`;
+        }
+    </script>
+</body>
+</html>

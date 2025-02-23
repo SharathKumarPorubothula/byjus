@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz Game</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .quiz {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .options {
+            margin-left: 20px;
+            text-align: left;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Quiz Game</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>Q1: What is the value of 7 × 8?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> 48</label>
+                <label><input type="radio" name="q1" value="b"> 54</label>
+                <label><input type="radio" name="q1" value="c"> 56</label>
+                <label><input type="radio" name="q1" value="d"> 64</label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>Q2: If a triangle has angles 60°, 60°, and 60°, what type of triangle is it?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Scalene</label>
+                <label><input type="radio" name="q2" value="b"> Isosceles</label>
+                <label><input type="radio" name="q2" value="c"> Equilateral</label>
+                <label><input type="radio" name="q2" value="d"> Right-angled</label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>Q3: What is the square root of 169?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> 11</label>
+                <label><input type="radio" name="q3" value="b"> 12</label>
+                <label><input type="radio" name="q3" value="c"> 13</label>
+                <label><input type="radio" name="q3" value="d"> 14</label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>Q4: What is 25% of 200?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> 25</label>
+                <label><input type="radio" name="q4" value="b"> 50</label>
+                <label><input type="radio" name="q4" value="c"> 75</label>
+                <label><input type="radio" name="q4" value="d"> 100</label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>Q5: What is the value of 5³?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> 15</label>
+                <label><input type="radio" name="q5" value="b"> 25</label>
+                <label><input type="radio" name="q5" value="c"> 75</label>
+                <label><input type="radio" name="q5" value="d"> 125</label>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>Q6: If x = 4 and y = 3, what is the value of x² + y²?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> 16</label>
+                <label><input type="radio" name="q6" value="b"> 25</label>
+                <label><input type="radio" name="q6" value="c"> 32</label>
+                <label><input type="radio" name="q6" value="d"> 49</label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>Q7: What is the perimeter of a square with a side length of 9 cm?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> 18 cm</label>
+                <label><input type="radio" name="q7" value="b"> 27 cm</label>
+                <label><input type="radio" name="q7" value="c"> 36 cm</label>
+                <label><input type="radio" name="q7" value="d"> 45 cm</label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>Q8: What is the sum of the angles in a quadrilateral?</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> 180°</label>
+                <label><input type="radio" name="q8" value="b"> 270°</label>
+                <label><input type="radio" name="q8" value="c"> 360°</label>
+                <label><input type="radio" name="q8" value="d"> 450°</label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>Q9: What is the probability of rolling a 3 on a standard 6-sided die?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> 1/6</label>
+                <label><input type="radio" name="q9" value="b"> 1/3</label>
+                <label><input type="radio" name="q9" value="c"> 1/2</label>
+                <label><input type="radio" name="q9" value="d"> 2/3</label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>Q10: If a train moves at 80 km/h, how far will it travel in 2.5 hours?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> 100 km</label>
+                <label><input type="radio" name="q10" value="b"> 150 km</label>
+                <label><input type="radio" name="q10" value="c"> 200 km</label>
+                <label><input type="radio" name="q10" value="d"> 250 km</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="btn" onclick="checkAnswers()">Submit</button>
+        <div class="result" id="quiz-result"></div>
+    </div>
+
+    <script>
+        // Correct answers for the quiz
+        const correctAnswers = {
+            q1: 'c', // 56
+            q2: 'c', // Equilateral
+            q3: 'c', // 13
+            q4: 'b', // 50
+            q5: 'd', // 125
+            q6: 'b', // 25
+            q7: 'c', // 36 cm
+            q8: 'c', // 360°
+            q9: 'a', // 1/6
+            q10: 'c' // 200 km
+        };
+
+        // Function to check answers
+        function checkAnswers() {
+            let score = 0;
+            const questions = Object.keys(correctAnswers);
+            questions.forEach((question) => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            });
+            const resultElement = document.getElementById('quiz-result');
+            resultElement.textContent = `You scored ${score} out of ${questions.length}!`;
+        }
+    </script>
+</body>
+</html>

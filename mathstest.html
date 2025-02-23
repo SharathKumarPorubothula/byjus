@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz Game</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .quiz {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .options {
+            margin-left: 20px;
+            text-align: left;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #1a5bbf;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Test</h1>
+
+    <!-- Quiz Container -->
+    <div class="quiz">
+        <!-- Arithmetic Section -->
+        <h2>Arithmetic</h2>
+        <!-- Question 1 -->
+        <div class="question">
+            <p>Q1: What is the value of 5 + 3 × 2?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> 16</label>
+                <label><input type="radio" name="q1" value="b"> 11</label>
+                <label><input type="radio" name="q1" value="c"> 10</label>
+                <label><input type="radio" name="q1" value="d"> 13</label>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>Q2: What is the smallest prime number?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> 0</label>
+                <label><input type="radio" name="q2" value="b"> 1</label>
+                <label><input type="radio" name="q2" value="c"> 2</label>
+                <label><input type="radio" name="q2" value="d"> 3</label>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>Q3: What is the LCM of 4 and 6?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="a"> 12</label>
+                <label><input type="radio" name="q3" value="b"> 24</label>
+                <label><input type="radio" name="q3" value="c"> 6</label>
+                <label><input type="radio" name="q3" value="d"> 18</label>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>Q4: If a number is divisible by 2 and 3, it is also divisible by?</p>
+            <div class="options">
+                <label><input type="radio" name="q4" value="a"> 5</label>
+                <label><input type="radio" name="q4" value="b"> 6</label>
+                <label><input type="radio" name="q4" value="c"> 7</label>
+                <label><input type="radio" name="q4" value="d"> 9</label>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>Q5: What is the sum of the first 10 natural numbers?</p>
+            <div class="options">
+                <label><input type="radio" name="q5" value="a"> 45</label>
+                <label><input type="radio" name="q5" value="b"> 55</label>
+                <label><input type="radio" name="q5" value="c"> 60</label>
+                <label><input type="radio" name="q5" value="d"> 65</label>
+            </div>
+        </div>
+
+        <!-- Algebra Section -->
+        <h2>Algebra</h2>
+        <!-- Question 6 -->
+        <div class="question">
+            <p>Q6: If 2x + 3 = 11, what is the value of x?</p>
+            <div class="options">
+                <label><input type="radio" name="q6" value="a"> 2</label>
+                <label><input type="radio" name="q6" value="b"> 4</label>
+                <label><input type="radio" name="q6" value="c"> 6</label>
+                <label><input type="radio" name="q6" value="d"> 3</label>
+            </div>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>Q7: What is the square root of 144?</p>
+            <div class="options">
+                <label><input type="radio" name="q7" value="a"> 10</label>
+                <label><input type="radio" name="q7" value="b"> 11</label>
+                <label><input type="radio" name="q7" value="c"> 12</label>
+                <label><input type="radio" name="q7" value="d"> 14</label>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>Q8: Solve: (x - 3)(x + 3) = 0</p>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> x = 3, -3</label>
+                <label><input type="radio" name="q8" value="b"> x = 6, -6</label>
+                <label><input type="radio" name="q8" value="c"> x = 9, -9</label>
+                <label><input type="radio" name="q8" value="d"> x = 0, -3</label>
+            </div>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>Q9: What is the cube of 5?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> 25</label>
+                <label><input type="radio" name="q9" value="b"> 50</label>
+                <label><input type="radio" name="q9" value="c"> 125</label>
+                <label><input type="radio" name="q9" value="d"> 225</label>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>Q10: What is the value of 3² + 4²?</p>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> 9</label>
+                <label><input type="radio" name="q10" value="b"> 16</label>
+                <label><input type="radio" name="q10" value="c"> 25</label>
+                <label><input type="radio" name="q10" value="d"> 7</label>
+            </div>
+        </div>
+
+        <!-- Geometry Section -->
+        <h2>Geometry</h2>
+        <!-- Question 11 -->
+        <div class="question">
+            <p>Q11: A triangle with all three sides equal is called?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> Isosceles</label>
+                <label><input type="radio" name="q11" value="b"> Equilateral</label>
+                <label><input type="radio" name="q11" value="c"> Scalene</label>
+                <label><input type="radio" name="q11" value="d"> Right-angled</label>
+            </div>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <p>Q12: What is the sum of the interior angles of a quadrilateral?</p>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> 180°</label>
+                <label><input type="radio" name="q12" value="b"> 270°</label>
+                <label><input type="radio" name="q12" value="c"> 360°</label>
+                <label><input type="radio" name="q12" value="d"> 450°</label>
+            </div>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <p>Q13: What is the area of a rectangle with length 8 cm and width 5 cm?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> 40 cm²</label>
+                <label><input type="radio" name="q13" value="b"> 25 cm²</label>
+                <label><input type="radio" name="q13" value="c"> 13 cm²</label>
+                <label><input type="radio" name="q13" value="d"> 20 cm²</label>
+            </div>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <p>Q14: What is the perimeter of a square with a side length of 6 cm?</p>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> 18 cm</label>
+                <label><input type="radio" name="q14" value="b"> 24 cm</label>
+                <label><input type="radio" name="q14" value="c"> 30 cm</label>
+                <label><input type="radio" name="q14" value="d"> 36 cm</label>
+            </div>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <p>Q15: Which shape has only one pair of parallel sides?</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> Square</label>
+                <label><input type="radio" name="q15" value="b"> Rectangle</label>
+                <label><input type="radio" name="q15" value="c"> Trapezium</label>
+                <label><input type="radio" name="q15" value="d"> Parallelogram</label>
+            </div>
+        </div>
+
+        <!-- Trigonometry Section -->
+        <h2>Trigonometry</h2>
+        <!-- Question 16 -->
+        <div class="question">
+            <p>Q16: What is sin 30°?</p>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> 0</label>
+                <label><input type="radio" name="q16" value="b"> 1</label>
+                <label><input type="radio" name="q16" value="c"> 1/2</label>
+                <label><input type="radio" name="q16" value="d"> √3/2</label>
+            </div>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <p>Q17: What is the value of tan 45°?</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> 0</label>
+                <label><input type="radio" name="q17" value="b"> 1</label>
+                <label><input type="radio" name="q17" value="c"> √2</label>
+                <label><input type="radio" name="q17" value="d"> Undefined</label>
+            </div>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <p>Q18: Which trigonometric function is equal to the opposite/hypotenuse?</p>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> Sine</label>
+                <label><input type="radio" name="q18" value="b"> Cosine</label>
+                <label><input type="radio" name="q18" value="c"> Tangent</label>
+                <label><input type="radio" name="q18" value="d"> Cotangent</label>
+            </div>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <p>Q19: What is cos 90°?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> 0</label>
+                <label><input type="radio" name="q19" value="b"> 1</label>
+                <label><input type="radio" name="q19" value="c"> -1</label>
+                <label><input type="radio" name="q19" value="d"> Undefined</label>
+            </div>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <p>Q20: Which trigonometric function is equal to adjacent/hypotenuse?</p>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> Sine</label>
+                <label><input type="radio" name="q20" value="b"> Cosine</label>
+                <label><input type="radio" name="q20" value="c"> Tangent</label>
+                <label><input type="radio" name="q20" value="d"> Cosecant</label>
+            </div>
+        </div>
+
+        <!-- Statistics & Probability Section -->
+        <h2>Statistics & Probability</h2>
+        <!-- Question 21 -->
+        <div class="question">
+            <p>Q21: What is the median of 3, 5, 7, 9, 11?</p>
+            <div class="options">
+                <label><input type="radio" name="q21" value="a"> 5</label>
+                <label><input type="radio" name="q21" value="b"> 7</label>
+                <label><input type="radio" name="q21" value="c"> 9</label>
+                <label><input type="radio" name="q21" value="d"> 11</label>
+            </div>
+        </div>
+
+        <!-- Question 22 -->
+        <div class="question">
+            <p>Q22: If a die is rolled, what is the probability of getting a number greater than 4?</p>
+            <div class="options">
+                <label><input type="radio" name="q22" value="a"> 1/6</label>
+                <label><input type="radio" name="q22" value="b"> 2/6</label>
+                <label><input type="radio" name="q22" value="c"> 3/6</label>
+                <label><input type="radio" name="q22" value="d"> 4/6</label>
+            </div>
+        </div>
+
+        <!-- Question 23 -->
+        <div class="question">
+            <p>Q23: What is the mean of 4, 8, 10, 12?</p>
+            <div class="options">
+                <label><input type="radio" name="q23" value="a"> 8</label>
+                <label><input type="radio" name="q23" value="b"> 9</label>
+                <label><input type="radio" name="q23" value="c"> 10</label>
+                <label><input type="radio" name="q23" value="d"> 11</label>
+            </div>
+        </div>
+
+        <!-- Question 24 -->
+        <div class="question">
+            <p>Q24: If two coins are tossed, what is the probability of getting two heads?</p>
+            <div class="options">
+                <label><input type="radio" name="q24" value="a"> 1/4</label>
+                <label><input type="radio" name="q24" value="b"> 1/3</label>
+                <label><input type="radio" name="q24" value="c"> 1/2</label>
+                <label><input type="radio" name="q24" value="d"> 3/4</label>
+            </div>
+        </div>
+
+        <!-- Question 25 -->
+        <div class="question">
+            <p>Q25: Which of the following measures of central tendency is most affected by extreme values?</p>
+            <div class="options">
+                <label><input type="radio" name="q25" value="a"> Mean</label>
+                <label><input type="radio" name="q25" value="b"> Median</label>
+                <label><input type="radio" name="q25" value="c"> Mode</label>
+                <label><input type="radio" name="q25" value="d"> Range</label>
+            </div>
+        </div>
+
+        <!-- Miscellaneous Section -->
+        <h2>Miscellaneous</h2>
+        <!-- Question 26 -->
+        <div class="question">
+            <p>Q26: If x² = 49, what are the possible values of x?</p>
+            <div class="options">
+                <label><input type="radio" name="q26" value="a"> 7 only</label>
+                <label><input type="radio" name="q26" value="b"> -7 only</label>
+                <label><input type="radio" name="q26" value="c"> 7 and -7</label>
+                <label><input type="radio" name="q26" value="d"> None</label>
+            </div>
+        </div>
+
+        <!-- Question 27 -->
+        <div class="question">
+            <p>Q27: How many sides does a hexagon have?</p>
+            <div class="options">
+                <label><input type="radio" name="q27" value="a"> 4</label>
+                <label><input type="radio" name="q27" value="b"> 5</label>
+                <label><input type="radio" name="q27" value="c"> 6</label>
+                <label><input type="radio" name="q27" value="d"> 7</label>
+            </div>
+        </div>
+
+        <!-- Question 28 -->
+        <div class="question">
+            <p>Q28: What is 20% of 250?</p>
+            <div class="options">
+                <label><input type="radio" name="q28" value="a"> 25</label>
+                <label><input type="radio" name="q28" value="b"> 50</label>
+                <label><input type="radio" name="q28" value="c"> 100</label>
+                <label><input type="radio" name="q28" value="d"> 75</label>
+            </div>
+        </div>
+
+        <!-- Question 29 -->
+        <div class="question">
+            <p>Q29: If a train is moving at 60 km/h, how far will it travel in 2.5 hours?</p>
+            <div class="options">
+                <label><input type="radio" name="q29" value="a"> 100 km</label>
+                <label><input type="radio" name="q29" value="b"> 120 km</label>
+                <label><input type="radio" name="q29" value="c"> 150 km</label>
+                <label><input type="radio" name="q29" value="d"> 180 km</label>
+            </div>
+        </div>
+
+        <!-- Question 30 -->
+        <div class="question">
+            <p>Q30: What is the sum of the angles in a triangle?</p>
+            <div class="options">
+                <label><input type="radio" name="q30" value="a"> 90°</label>
+                <label><input type="radio" name="q30" value="b"> 180°</label>
+                <label><input type="radio" name="q30" value="c"> 270°</label>
+                <label><input type="radio" name="q30" value="d"> 360°</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="btn" onclick="checkAnswers()">Submit</button>
+        <div class="result" id="quiz-result"></div>
+    </div>
+
+    <script>
+        // Correct answers for the quiz
+        const correctAnswers = {
+            q1: 'b', // 11
+            q2: 'c', // 2
+            q3: 'a', // 12
+            q4: 'b', // 6
+            q5: 'b', // 55
+            q6: 'b', // 4
+            q7: 'c', // 12
+            q8: 'a', // x = 3, -3
+            q9: 'c', // 125
+            q10: 'c', // 25
+            q11: 'b', // Equilateral
+            q12: 'c', // 360°
+            q13: 'a', // 40 cm²
+            q14: 'b', // 24 cm
+            q15: 'c', // Trapezium
+            q16: 'c', // 1/2
+            q17: 'b', // 1
+            q18: 'a', // Sine
+            q19: 'a', // 0
+            q20: 'b', // Cosine
+            q21: 'b', // 7
+            q22: 'b', // 2/6
+            q23: 'b', // 9
+            q24: 'a', // 1/4
+            q25: 'a', // Mean
+            q26: 'c', // 7 and -7
+            q27: 'c', // 6
+            q28: 'b', // 50
+            q29: 'c', // 150 km
+            q30: 'b'  // 180°
+        };
+
+        // Function to check answers
+        function checkAnswers() {
+            let score = 0;
+            const questions = Object.keys(correctAnswers);
+            questions.forEach((question) => {
+                const selected = document.querySelector(`input[name="${question}"]:checked`);
+                if (selected && selected.value === correctAnswers[question]) {
+                    score++;
+                }
+            });
+            const resultElement = document.getElementById('quiz-result');
+            resultElement.textContent = `You scored ${score} out of ${questions.length}!`;
+        }
+    </script>
+</body>
+</html>
