@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         /* General Styles */
         * {
@@ -24,27 +26,39 @@
         }
 
         /* Navigation */
-        nav {
+        .navbar {
             background: linear-gradient(135deg, #6a11cb, #2575fc);
-            padding: 15px 20px;
-            text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+        .navbar-brand {
+            color: white !important;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
             font-size: 18px;
             font-weight: 500;
+            margin: 0 10px;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: #ffdd57;
+        .navbar-nav .nav-link:hover {
+            color: #ffdd57 !important;
+        }
+
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
         }
 
         /* Hero Section */
@@ -84,6 +98,28 @@
             transform: translateY(-3px);
         }
 
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
         /* Courses Section */
         #courses-list {
             display: flex;
@@ -94,8 +130,7 @@
         }
 
         .course-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
+            background: white;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -119,6 +154,7 @@
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 10px;
+            color: #2575fc;
         }
 
         .course-card p {
@@ -189,6 +225,7 @@
         #settings-form label {
             font-size: 1rem;
             font-weight: 500;
+            color: #333;
         }
 
         #settings-form button {
@@ -232,6 +269,15 @@
             .course-card {
                 width: 100%;
             }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-item {
+                width: 80%;
+            }
         }
 
         /* Smooth Transitions */
@@ -247,23 +293,65 @@
             transform: translateY(0);
             display: block; /* Show active section */
         }
+
+        /* Back-to-Top Button */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 50%;
+            background: #2575fc;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="fas fa-book"></i> Byju's Extension</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('courses')"><i class="fas fa-book"></i> Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('quiz-games')"><i class="fas fa-gamepad"></i> Quiz Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('profile')"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showPage('settings')"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Main Content -->
     <div class="content">
-        <nav>
-            <a href="#" onclick="showPage('courses')"><i class="fas fa-book"></i> Courses</a> |
-            <a href="#" onclick="showPage('quiz-games')"><i class="fas fa-gamepad"></i> Quiz Games</a> |
-            <a href="#" onclick="showPage('profile')"><i class="fas fa-user"></i> Profile</a> |
-            <a href="#" onclick="showPage('settings')"><i class="fas fa-cog"></i> Settings</a> |
-            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </nav>
-
         <div id="hero">
             <h1>Welcome to Byju's Extension</h1>
             <p>Your gateway to interactive learning and personalized education.</p>
             <button onclick="showPage('courses')">Explore Courses</button>
+
+            <!-- Features Section -->
+            <div class="features">
+                <div class="feature-item">📚 Learn Math, English, Science, and Coding</div>
+                <div class="feature-item">🎯 Take Tests and Quizzes</div>
+                <div class="feature-item">🎮 Play Trivia and Riddles Games</div>
+            </div>
         </div>
 
         <div id="content">
@@ -272,7 +360,7 @@
                 <h1 style="text-align: center; margin: 40px 0;">Available Courses</h1>
                 <div id="courses-list"></div>
                 <div id="test-quiz-section">
-                    <button onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/index3.html'">Take a Test/Quiz</button>
+                    <button onclick="window.location.href='index3.html'">Take a Test/Quiz</button>
                 </div>
             </div>
 
@@ -280,8 +368,8 @@
             <div id="quiz-games-section" class="page-section">
                 <h1 style="text-align: center; margin: 40px 0;">Quiz Games</h1>
                 <div>
-                    <button onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/game.html'">Trivia Game</button>
-                    <button onclick="window.location.href='file:///C:/Users/DELL/OneDrive/Desktop/byjus/Riddles.html'">Riddles Challenge</button>
+                    <button onclick="window.location.href='game.html'">Trivia Game</button>
+                    <button onclick="window.location.href='Riddles.html'">Riddles Challenge</button>
                 </div>
             </div>
 
@@ -307,6 +395,11 @@
         </footer>
     </div>
 
+    <!-- Back-to-Top Button -->
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
         // Function to show a specific page section
         function showPage(page) {
@@ -355,6 +448,7 @@
                 let img = document.createElement("img");
                 img.src = course.image;
                 img.alt = course.name;
+                img.onerror = () => { img.src = 'placeholder.jpg'; }; // Fallback image
 
                 let title = document.createElement("h3");
                 title.textContent = course.name;
@@ -371,19 +465,24 @@
         }
 
         function loadProfile() {
-            const userName = localStorage.getItem("userName");
-            const userEmail = localStorage.getItem("userEmail");
+            const userName = localStorage.getItem("userName") || "No username found";
+            const userEmail = localStorage.getItem("userEmail") || "No email found";
 
             document.getElementById("profile-info").innerHTML = `
-                <p><strong>Username:</strong> ${userName || "No username found"}</p>
-                <p><strong>Email:</strong> ${userEmail || "No email found"}</p>
+                <p><strong>Username:</strong> ${userName}</p>
+                <p><strong>Email:</strong> ${userEmail}</p>
             `;
         }
 
         function loadSettings() {
             document.getElementById("settings-form").addEventListener("submit", (event) => {
                 event.preventDefault();
-                alert("Settings saved successfully!");
+                const notifications = document.getElementById("notifications").checked;
+                if (notifications) {
+                    alert("Email notifications enabled!");
+                } else {
+                    alert("Email notifications disabled!");
+                }
             });
         }
 
@@ -391,11 +490,27 @@
             alert("Logging out...");
             localStorage.removeItem("userName");
             localStorage.removeItem("userEmail");
-            window.location.href = "file:///C:/Users/DELL/OneDrive/Desktop/byjus/index.html";
+            window.location.href = "index.html";
         }
 
+        // Back-to-Top Button
+        window.addEventListener('scroll', () => {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         // Load courses by default
-        loadCourses();
+        document.addEventListener("DOMContentLoaded", () => {
+            showPage('courses');
+        });
     </script>
 </body>
 </html>
