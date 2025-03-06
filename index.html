@@ -75,6 +75,11 @@
                       <input type="password" id="login-password" placeholder="Enter your password" required>
                   </div>
                   <button type="submit" class="btn-primary" onclick="userLogin(event)">Login</button>
+                  <!-- guest entry -->
+                  <div class="guest-entry">
+                    <p>Or continue as a guest:</p>
+                    <button class="btn-guest" onclick="guestEntry()">Continue as Guest</button>
+                </div>
               </form>
           </div> 
           <div id="signup" id="signup-form" class="auth-form">
@@ -97,6 +102,7 @@
                   </div>
                   <button type="submit" class="btn-primary" onclick="signUp(event)">Sign Up</button>
               </form>
+              
           </div>
       </div>
   </div>
@@ -104,6 +110,7 @@
   <div id="spinner">
     <div class="spinner"></div>
   </div>
+
 
 <script type="/module" src="script2.js"></script>
 
@@ -128,19 +135,19 @@
       const auth = getAuth(app);
     
       window.signUp = function (event) {
-        event.preventDefault(); // Prevent form submission
-        let username = document.getElementById("signup-username").value; // Get username
+        event.preventDefault(); 
+        let username = document.getElementById("signup-username").value; 
         let email = document.getElementById("signup-email").value;
         let password = document.getElementById("signup-password").value;
     
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
-            alert("User Registered Successfully!");
+            alert("User Registered Successfully! You can login now!");
             // Store the username and email in localStorage
             localStorage.setItem("userName", username);
             localStorage.setItem("userEmail", email);
             // Redirect to the profile page or any other page
-            window.location.href = "file:///C:/Users/DELL/OneDrive/Desktop/byjus/index2.html";
+            //window.location.href = "index2.html";
           })
           .catch((error) => {
             alert("Provide valid Credentials");
@@ -167,7 +174,7 @@
 
       // Wait for the animation to complete, then redirect
       setTimeout(() => {
-        window.location.href = "file:///C:/Users/DELL/OneDrive/Desktop/byjus/index2.html";
+        window.location.href = "index2.html";
       }, 300); // Match the duration of the fade-out animation
           })
           .catch((error) => {
@@ -179,6 +186,24 @@
     window.addEventListener("load", () => {
       document.getElementById("spinner").style.display = "none";
     });
+
+
+    window.guestEntry = function () {
+      localStorage.setItem("isGuest", "true");
+      localStorage.removeItem("userName");
+      localStorage.removeItem("userEmail");
+
+      document.getElementById("spinner").style.display = "block";
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+          window.location.href = "index2.html";
+      }, 300);
+  };
+
+  //window.addEventListener("load", () => { -->
+      //document.getElementById("spinner").style.display = "none";
+  //});
 
     </script>
     
